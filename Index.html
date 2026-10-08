@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kelompok 9 - STT Nurul Fikri</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+    color: #333;
+    padding: 24px;
+}
+
+.page {
+    max-width: 1100px;
+    margin: auto;
+    background: white;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+
+/* HEADER */
+header {
+    background: #e7e7e7;
+    text-align: center;
+    padding: 28px 20px;
+    border-bottom: 1px solid #bbb;
+}
+
+.icon {
+    font-size: 38px;
+    margin-bottom: 6px;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 6px;
+}
+
+header h3 {
+    font-size: 17px;
+    font-weight: normal;
+    color: #555;
+}
+
+header .kampus {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+/* INTRO */
+.intro {
+    margin: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fafafa;
+}
+
+.intro-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.intro h2 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.intro p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* KARTU ANGGOTA */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 16px 16px;
+}
+
+.member-card {
+    border: 1px solid #c8c8c8;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    min-height: 255px;
+}
+
+.photo-wrap {
+    width: 42%;
+    min-width: 145px;
+    background: #eee;
+}
+
+.photo-wrap img {
+    width: 100%;
+    height: 100%;
+    min-height: 255px;
+    object-fit: cover;
+    display: block;
+}
+
+.member-content {
+    padding: 15px 14px;
+    flex: 1;
+}
+
+.name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.name-row h2 {
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.role {
+    background: #e5e5e5;
+    border-radius: 14px;
+    padding: 4px 9px;
+    font-size: 11px;
+    color: #555;
+}
+
+.biodata {
+    font-size: 13px;
+}
+
+.biodata div {
+    display: grid;
+    grid-template-columns: 86px 10px 1fr;
+    gap: 4px;
+    margin: 7px 0;
+    line-height: 1.35;
+}
+
+.biodata span {
+    color: #555;
+}
+
+.biodata b {
+    font-weight: normal;
+}
+
+.biodata p {
+    margin: 0;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #bbb;
+    background: #e7e7e7;
+    text-align: center;
+    padding: 14px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+
+    body {
+        padding: 8px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    .member-card {
+        display: block;
+    }
+
+    .photo-wrap {
+        width: 100%;
+        height: 280px;
+    }
+
+    .photo-wrap img {
+        min-height: 280px;
+    }
+
+    .biodata div {
+        grid-template-columns: 105px 10px 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<!-- HEADER -->
+<header>
+
+    <div class="icon">👥</div>
+
+    <h1>Kelompok 9</h1>
+
+    <h3>
+        Desain UI/UX & Pemrograman Web
+    </h3>
+
+    <div class="kampus">
+        STT Nurul Fikri
+    </div>
+
+</header>
+
+
+<!-- INTRO -->
+<section class="intro">
+
+    <div class="intro-icon">
+        👥
+    </div>
+
+    <div>
+
+        <h2>Intro</h2>
+
+        <p>
+            Perkenalkan, kami dari
+            <b>Kelompok 9</b>
+            mahasiswa STT Nurul Fikri.
+            Berikut adalah biodata anggota kelompok
+            beserta foto masing-masing.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DATA ANGGOTA -->
+<main class="grid">
+
+
+<!-- ANGGOTA 1 -->
+<article class="member-card">
+
+    <div class="photo-wrap">
+
+        <!-- Foto Lulu sudah dimasukkan langsung ke HTML -->
+
+        <img
+        src="DATA FOTO LULU"
+        alt="Foto Lulu Qolbi Nadifah">
+
+    </div>
+
+    <div class="member-content">
+
+        <div class="name-row">
+
+            <h2>
+                Lulu Qolbi Nadifah
+            </h2>
+
+            <span class="role">
+                Anggota 1
+            </span>
+
+        </div>
+
+        <div class="biodata">
+
+            <div>
+                <span>Jurusan</span>
+                <b>:</b>
+                <p>TI</p>
+            </div>
+
+            <div>
+                <span>Hobi</span>
+                <b>:</b>
+                <p>Berenang</p>
+            </div>
+
+            <div>
+                <span>TTL</span>
+                <b>:</b>
+                <p>14 Maret 2007</p>
+            </div>
+
+            <div>
+                <span>Asal Sekolah</span>
+                <b>:</b>
+                <p>Ponpes HPAIC Merapi</p>
+            </div>
+
+            <div>
+                <span>Makanan Favorit</span>
+                <b>:</b>
+                <p>Seblak</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ANGGOTA 2 -->
+<article class="member-card">
+
+    <div class="photo-wrap">
+
+        <img
+        src="DATA FOTO KHOIRUNNISA"
+        alt="Foto Khoirunnisa">
+
+    </div>
+
+    <div class="member-content">
+
+        <div class="name-row">
+
+            <h2>
+                Khoirunnisa
+            </h2>
+
+            <span class="role">
+                Anggota 2
+            </span>
+
+        </div>
+
+        <div class="biodata">
+
+            <div>
+                <span>Jurusan</span>
+                <b>:</b>
+                <p>Teknik Informatika</p>
+            </div>
+
+            <div>
+                <span>Hobi</span>
+                <b>:</b>
+                <p>Membaca Novel</p>
+            </div>
+
+            <div>
+                <span>TTL</span>
+                <b>:</b>
+                <p>Depok, 28 Juli 2008</p>
+            </div>
+
+            <div>
+                <span>Asal Sekolah</span>
+                <b>:</b>
+                <p>SMK Karya Dharma 2</p>
+            </div>
+
+            <div>
+                <span>Makanan Favorit</span>
+                <b>:</b>
+                <p>Cakwe</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ANGGOTA 3 -->
+<article class="member-card">
+
+    <div class="photo-wrap">
+
+        <img
+        src="DATA FOTO MALIK"
+        alt="Foto Malik Afrizal">
+
+    </div>
+
+    <div class="member-content">
+
+        <div class="name-row">
+
+            <h2>
+                Malik Afrizal
+            </h2>
+
+            <span class="role">
+                Anggota 3
+            </span>
+
+        </div>
+
+        <div class="biodata">
+
+            <div>
+                <span>Jurusan</span>
+                <b>:</b>
+                <p>TI01</p>
+            </div>
+
+            <div>
+                <span>Hobi</span>
+                <b>:</b>
+                <p>Main alat musik</p>
+            </div>
+
+            <div>
+                <span>TTL</span>
+                <b>:</b>
+                <p>Depok, 26 September 2008</p>
+            </div>
+
+            <div>
+                <span>Asal Sekolah</span>
+                <b>:</b>
+                <p>SMKN 4 Depok</p>
+            </div>
+
+            <div>
+                <span>Makanan Favorit</span>
+                <b>:</b>
+                <p>Mendoan</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ANGGOTA 4 -->
+<article class="member-card">
+
+    <div class="photo-wrap">
+
+        <img
+        src="DATA FOTO LIVIA"
+        alt="Foto Livia Harvina Aditya">
+
+    </div>
+
+    <div class="member-content">
+
+        <div class="name-row">
+
+            <h2>
+                Livia Harvina Aditya
+            </h2>
+
+            <span class="role">
+                Anggota 4
+            </span>
+
+        </div>
+
+        <div class="biodata">
+
+            <div>
+                <span>Jurusan</span>
+                <b>:</b>
+                <p>Teknik Informatika</p>
+            </div>
+
+            <div>
+                <span>Hobi</span>
+                <b>:</b>
+                <p>Baca novel</p>
+            </div>
+
+            <div>
+                <span>TTL</span>
+                <b>:</b>
+                <p>16 September 2006</p>
+            </div>
+
+            <div>
+                <span>Asal Sekolah</span>
+                <b>:</b>
+                <p>SMKN 3 Depok</p>
+            </div>
+
+            <div>
+                <span>Makanan Favorit</span>
+                <b>:</b>
+                <p>Seafood</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ANGGOTA 5 -->
+<article class="member-card">
+
+    <div class="photo-wrap">
+
+        <img
+        src="DATA FOTO LILA"
+        alt="Foto Lila Aulia Harahap">
+
+    </div>
+
+    <div class="member-content">
+
+        <div class="name-row">
+
+            <h2>
+                Lila Aulia Harahap
+            </h2>
+
+            <span class="role">
+                Anggota 5
+            </span>
+
+        </div>
+
+        <div class="biodata">
+
+            <div>
+                <span>Jurusan</span>
+                <b>:</b>
+                <p>Teknik Informatika</p>
+            </div>
+
+            <div>
+                <span>Hobi</span>
+                <b>:</b>
+                <p>Naik Gunung</p>
+            </div>
+
+            <div>
+                <span>TTL</span>
+                <b>:</b>
+                <p>28 Desember 2008</p>
+            </div>
+
+            <div>
+                <span>Asal Sekolah</span>
+                <b>:</b>
+                <p>MAN 1 Padangsidimpuan</p>
+            </div>
+
+            <div>
+                <span>Makanan Favorit</span>
+                <b>:</b>
+                <p>Kentang depan NF</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+    Kelompok 9 &nbsp; | &nbsp;
+    STT Nurul Fikri &nbsp; | &nbsp;
+    Praktikum Dasar-Dasar HTML
+
+</footer>
+
+</div>
+
+</body>
+</html>
