@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pemesanan Pizza</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        fieldset {
+            border: 2px solid #d3d3d3;
+            padding: 20px;
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        legend {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a446c;
+            padding: 0 10px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        h3 {
+            color: #cc0000;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .info-text {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .disclaimer {
+            font-size: 12px;
+            font-style: italic;
+            border-top: 1px solid #d3d3d3;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <fieldset>
+        <legend>THANK YOU</legend>
+        
+         <p class="info-text">Thank you for ordering from Black Goose Bistro. We have received the following information about your order:</p>
+        
+        <h3>Your Information</h3>
+        <ul>
+            <li><strong>Name:</strong> <span id="resname"></span>Lulu qolbi</li>
+            <li><strong>Address:</strong> <span id="res-address"></span>jalan margahayu</li>
+            <li><strong>Telephone number:</strong> <span id="resphone"></span>08231786</li>
+            <li><strong>Email Address:</strong> <span id="resemail"></span>qolbinadifahlulu@gmail.com</li>
+        </ul>
+        
+        <p><strong>Delivery instructions:</strong> <span id="res-instruction">-</span></p>
+        
+        <h3>Your pizza</h3>
+        <ul>
+            <li><strong>Crust:</strong> <span id="rescrust"></span>ayam</li>
+            <li><strong>Toppings:</strong> <span id="restoppings"></span>white sauce</li>
+            <li><strong>Number:</strong> <span id="resquantity"></span>3</li>
+        </ul>
+        
+        <p class="disclaimer">This site is for educational purposes only. No pizzas will be delivered.</p>
+    </fieldset>
+
+    <script>
+        // Mengambil data dari URL parameters setelah form disubmit
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Menampilkan data teks dasar
+        document.getElementById('res-name').textContent = urlParams.get('name') || '-';
+        document.getElementById('res-address').textContent = urlParams.get('address') || '-';
+        document.getElementById('res-phone').textContent = urlParams.get('phone') || '-';
+        document.getElementById('res-email').textContent = urlParams.get('email') || '-';
+        document.getElementById('res-instruction').textContent = urlParams.get('instruction') || 'None';
+        document.getElementById('res-crust').textContent = urlParams.get('crust') || '-';
+        document.getElementById('res-quantity').textContent = urlParams.get('quantity') || '-';
+
+        // Menampilkan semua topping yang dipilih (karena checkbox bisa dipilih banyak)
+        const toppings = urlParams.getAll('topping');
+        document.getElementById('res-toppings').textContent = toppings.length > 0 ? toppings.join(', ') : 'None';
+    </script>
+
+</body>
+</html>
