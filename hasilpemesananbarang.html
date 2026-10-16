@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 2: HTML Form</title>
+    <style>
+        /* CSS INTERNAL - UKURAN LEBIH KECIL */
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Frame Browser - Diperkecil lebarnya */
+        .browser-container {
+            width: 100%;
+            max-width: 580px; 
+            border: 2px solid #333333;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+        }
+
+        /* Header Browser */
+        .browser-header {
+            display: flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-bottom: 2px solid #333333;
+            gap: 10px;
+        }
+
+        .browser-buttons {
+            display: flex;
+            gap: 8px;
+            font-size: 13px;
+            color: #333333;
+            cursor: default;
+        }
+
+        .address-bar {
+            flex-grow: 1;
+            background-color: #ffffff;
+            border: 1.5px solid #333333;
+            border-radius: 15px;
+            padding: 2px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #666666;
+        }
+
+        /* Konten Halaman */
+        .web-content {
+            background-color: #e0e0e0;
+            padding: 12px;
+        }
+
+        /* Menu Navigasi - Diperkecil tinggi & teksnya */
+        .nav-menu {
+            display: flex;
+            border: 2px solid #333333;
+            background-color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .nav-menu a {
+            flex: 1;
+            text-align: center;
+            padding: 5px 0;
+            text-decoration: none;
+            color: #333333;
+            font-size: 11px;
+            border-right: 2px solid #333333;
+        }
+
+        .nav-menu a:last-child {
+            border-right: none;
+        }
+
+        /* Layout Form */
+        .form-layout {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        /* Kotak Gambar - Diperkecil dari 150px ke 100px */
+        .image-placeholder {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333333;
+    background-color: #ffffff;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+        .cross-line-1, .cross-line-2 {
+            position: absolute;
+            width: 142%;
+            height: 2px;
+            background-color: #333333;
+            top: 50%;
+            left: 50%;
+        }
+        .cross-line-1 { transform: translate(-50%, -50%) rotate(45deg); }
+        .cross-line-2 { transform: translate(-50%, -50%) rotate(-45deg); }
+
+        /* Sektor Isi Form */
+        .form-details {
+            flex-grow: 1;
+        }
+
+        .form-group {
+            display: flex;
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .form-group.valign-top {
+            align-items: flex-start;
+        }
+
+        /* Label Kiri - Lebar dipersempit & teks diperkecil */
+        .form-group label {
+            width: 120px;
+            font-size: 11px;
+            color: #333333;
+            text-align: right;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .static-text {
+            font-size: 11px;
+            color: #333333;
+            line-height: 1.3;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        /* Kolom Input & Select - Ukuran box diperkecil */
+        input[type="text"], select {
+            width: 100%;
+            max-width: 240px;
+            padding: 3px 6px;
+            border: 1.5px solid #333333;
+            background-color: #ffffff;
+            font-size: 11px;
+            color: #333333;
+            outline: none;
+        }
+
+        select {
+            max-width: 130px;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='8' height='8' viewBox='0 0 10 10'><path d='M0 3l5 5 5-5z' fill='%23333'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 6px center;
+            padding-right: 20px;
+        }
+
+        /* Area Checkbox */
+        .input-with-checkboxes {
+            width: 100%;
+            max-width: 240px;
+        }
+
+        .checkbox-group {
+            margin-top: 5px;
+        }
+
+        .checkbox-label {
+            display: flex !important;
+            align-items: center;
+            justify-content: flex-start !important;
+            width: auto !important;
+            margin-bottom: 3px;
+            font-size: 10px !important;
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            margin-right: 4px;
+            transform: scale(0.9);
+        }
+
+        /* Tombol Submit Hijau - Diperkecil */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .btn-submit {
+            background-color: #27ae60;
+            color: #ffffff;
+            border: 1.5px solid #1e7e43;
+            border-radius: 3px;
+            padding: 5px 16px;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #219653;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Frame Browser Mockup -->
+    <div class="browser-container">
+        <!-- Header Atas Browser -->
+        <div class="browser-header">
+            <div class="browser-buttons">
+                <span>&#11013;</span> 
+                <span>&#10145;</span> 
+                <span>&#2000;</span>  
+                <span>&#8635;</span>  
+            </div>
+            <div class="address-bar">
+                <span>http://</span>
+                <span>&#128269;</span>
+            </div>
+        </div>
+
+        <!-- Konten Halaman Web -->
+        <div class="web-content">
+            
+            <!-- Menu Navigasi Kotak -->
+            <nav class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#">Register</a>
+                <a href="#">Policy</a>
+                <a href="#">About</a>
+            </nav>
+
+            <!-- Bagian Utama Form -->
+            <form class="order-form" onsubmit="event.preventDefault();">
+                <div class="form-layout">
+                    
+                    <!-- Sisi Kiri: Kotak Gambar Silang -->
+                    <div class="image-placeholder">
+                    <img src="IMG-20261008-WA0026.jpg" alt="Foto Produk">
+                </div>
+
+                    <!-- Sisi Kanan: Detail Isi Form -->
+                    <div class="form-details">
+                        
+                        <div class="form-group">
+                            <label>Title Here :</label>
+                            <span class="static-text">skincare g2g</span>
+                        </div>
+
+                        <div class="form-group valign-top">
+                            <label>Description :</label>
+                            <span class="static-text">moisturizer brightening pink</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Total Amount :</label>
+                            <span class="static-text font-bold">35.000</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pay to :</label>
+                            <span class="static-text">082124679002</span></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="payment-type">Payment Type :</label>
+                            <select id="payment-type">
+                                <option>BRI</option>
+                                <option>BCA</option>
+                                <option>Mandiri</option>
+                                <option>seabank</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="account-holder">Account Holder :</label>
+                            <input type="text" id="account-holder" value="song jia">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="account-no">Account No :</label>
+                            <div class="input-with-checkboxes">
+                                <input type="text" id="account-no" value="08687332556">
+                                
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked> Send to Mobile Phone
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked> Email me copy of transaction
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="send-mobile">Send to Mobile Phone :</label>
