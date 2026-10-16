@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Barang</title>
+</head>
+<body>
+
+    <!-- Bar Navigasi Atas -->
+    <table border="1" width="100%" cellpadding="5" cellspacing="0">
+        <tr>
+            <td align="center">
+                Home | Generate Link | Transaction History | Policy | Logout
+            </td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- Form Utama -->
+    <form action="" method="post" enctype="multipart/form-data">
+
+        <table border="0" cellpadding="4" cellspacing="2">
+
+            <tr>
+                <td rowspan="6" valign="top" align="center">
+
+                    <!-- Kotak Foto -->
+                    <table border="1" width="150" height="150" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="center">
+                                <img src="IMG-20261008-WA0026.jpg"
+                                     alt="Foto"
+                                     width="150"
+                                     height="150"
+                                     style="object-fit: cover;">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br>
+
+                    <!-- Upload Foto -->
+                    <input type="file" name="upload_pictures" accept="image/*">
+
+                </td>
+
+                <td><b>Title Here</b></td>
+                <td>:</td>
+                <td>
+                    <input type="text"
+                           name="title"
+                           value="skincare g2g"
+                           style="width: 250px;">
+                </td>
+            </tr>
+
+            <tr>
+                <td valign="top"><b>Description</b></td>
+                <td valign="top">:</td>
+                <td>
+                    <textarea name="description"
+                              rows="3"
+                              cols="35">moisturizer brightening pink</textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Account Number</b></td>
+                <td>:</td>
+                <td>
+                    <input type="text"
+                           name="account_number"
+                           value="082124679002"
+                           style="width: 250px;">
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Bank</b></td>
+                <td>:</td>
+                <td>
+                    <select name="bank" style="width: 100px;">
+                        <option value="seabank" selected>seabank</option>
+                        <option value="BCA">BCA</option>
+                        <option value="Mandiri">Mandiri</option>
+                        <option value="BRI">BRI</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Account Holder</b></td>
+                <td>:</td>
+                <td>
+                    <input type="text"
+                           name="account_holder"
+                           value="song jia"
+                           style="width: 250px;">
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Transaction</b></td>
+                <td>:</td>
+                <td>
+                    <input type="number"
+                           name="transaction"
+                           value="1"
+                           min="1"
+                           style="width: 50px;">
+
+                    <br>
+
+                    <small>
+                        <i>
+                            * if the transaction is for 3 person,
+                            choose 3 from the drop-down list
+                        </i>
+                    </small>
+
+                    <br>
+
+                    <input type="checkbox"
+                           id="sms"
+                           name="notif[]"
+                           checked>
+
+                    <label for="sms">
+                        Send to Mobile Phone
+                    </label>
+
+                    <br>
+
+                    <input type="checkbox"
+                           id="email"
+                           name="notif[]"
+                           checked>
+
+                    <label for="email">
+                        Send to Email
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <b>Send to Mobile Phone</b>
+                </td>
+                <td>:</td>
+                <td>
+                    <input type="text"
+                           name="mobile_phone"
+                           value="082316757659"
+                           style="width: 250px;">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <b>Send to Email</b>
+                </td>
+                <td>:</td>
+                <td>
+                    <input type="text"
+                           name="email"
+                           value="songjia140967@yahoo.com"
+                           style="width: 250px;">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4" align="center">
+                    <br>
+                    <button type="submit"
+                            style="background-color: lightgreen;
+                                   font-weight: bold;
+                                   padding: 5px 15px;">
+                        Generate Nobr Link
+                    </button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+</html>
