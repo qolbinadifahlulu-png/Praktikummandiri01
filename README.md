@@ -1,2 +1,2 @@
-# Praktikummandiri01
+# Praktikum tugas
 DesainUIUX
